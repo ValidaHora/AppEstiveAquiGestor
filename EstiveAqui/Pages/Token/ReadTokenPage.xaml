@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstiveAqui.Pages.ReadTokenPage"
+             xmlns:local="clr-namespace:EstiveAqui;assembly=EstiveAqui"
+             Style="{DynamicResource AppStyle}"
+             Title="Editar Passclock">
+
+  <ContentPage.Content>
+    <AbsoluteLayout VerticalOptions="FillAndExpand"
+                  HorizontalOptions="FillAndExpand">
+
+      <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+          Source="Background.png"
+          Style="{DynamicResource BackgroundAppStyle}"/>
+
+      <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          
+          <StackLayout
+               Grid.Row="0" Grid.Column="0"
+               Padding="20,0"
+               Spacing="7"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Center">
+
+            <Label
+                Text="Editar Passclock"
+                TextColor="#FFFFFF"
+                FontSize="35"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+
+          </StackLayout>
+          
+          <StackLayout
+               Grid.Row="1" Grid.Column="0"
+               Padding="20,20"
+               Spacing="5"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Start">
+
+            <Grid Padding="0,0,0,1">
+              <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="1" />
+              </Grid.RowDefinitions>
+              <Label Grid.Row="0" FontSize="12" FontAttributes="Bold" Text="APELIDO DO PASSCLOCK" TextColor="#09395d" />
+              <BoxView Grid.Row="1" BackgroundColor="#09395d"/>
+            </Grid>
+            <local:BaseEntry
+              x:Name="EntryAlias"
+              Style="{DynamicResource EntryStyle}"
+              Placeholder="Apelido do Passclock"
+              Text="{Binding Alias}"
+              ReturnType="Go"/>
+
+            <Label />
+            <!--<Image Source="TokenFront.png"
+                   HorizontalOptions="Center"/>
+
+            <Entry
+              Style="{DynamicResource EntryStyle}"
+              Placeholder="Número do Token"
+              Keyboard="Numeric"
+              Text="{Binding Value}"/>
+
+            <Image Source="TokenBack.png"
+                   HorizontalOptions="Center"/>
+
+            <Entry
+              Style="{DynamicResource EntryStyle}"
+              Placeholder="Número do Código de Barras"
+              Keyboard="Numeric"
+              Text="{Binding BarCode}"/>-->
+
+            <Label />
+
+            <StackLayout Orientation="Horizontal"  HorizontalOptions="FillAndExpand">
+              <StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                <Button Text="ATUALIZAR"
+                    TextColor="#FFF"
+                    BorderRadius="0"
+                    BorderColor="#FFF"
+                    BackgroundColor="#3a9b13"
+                    HorizontalOptions="FillAndExpand"
+                    CommandParameter="{Binding Id}"
+                    Command="{Binding UpdateCommand}"/>
+              </StackLayout>
+              <!--<StackLayout Orientation="Vertical"  HorizontalOptions="FillAndExpand">
+                <Button Text="EXCLUIR"
+                    TextColor="#FFF"
+                    BorderRadius="0"
+                    BorderColor="#FFF"
+                    BackgroundColor="#c90101"
+                    HorizontalOptions="FillAndExpand"
+                    CommandParameter="{Binding Id}"
+                    Command="{Binding DeleteCommand}"/>
+              </StackLayout>-->
+            </StackLayout>
+          </StackLayout>
+        </Grid>
+      </ScrollView>
+
+      <!--<local:localTemplate AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" IsVisible="{Binding Islocal}"  />-->
+    
+    </AbsoluteLayout>
+  </ContentPage.Content>
+</ContentPage>

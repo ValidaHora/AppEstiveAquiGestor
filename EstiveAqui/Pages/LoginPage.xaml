@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage 
+    xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="EstiveAqui.Pages.LoginPage" 
+    xmlns:local="clr-namespace:EstiveAqui;assembly=EstiveAqui"    
+    Style="{DynamicResource AppStyle}">
+	<ContentPage.Content>
+		<AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+			<Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="Background.png" Style="{DynamicResource BackgroundAppStyle}" />
+			<ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="280" />
+						<RowDefinition Height="*" />
+						<RowDefinition Height="60" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Image Grid.Row="0" Grid.Column="0" Source="Logo.png" Aspect="AspectFill" Scale="0.7" HorizontalOptions="Center" VerticalOptions="Center" />
+					<StackLayout Grid.Row="1" Grid.Column="0" Padding="20,0" Spacing="7" HorizontalOptions="FillAndExpand" VerticalOptions="End">
+            <local:BaseEntry 
+                x:Name="EntryUsername"
+                Style="{DynamicResource EntryStyle}" 
+                Placeholder="Email" 
+                Keyboard="Email" 
+                Text="{Binding Username}"
+                ReturnType="Next"/>
+            
+            <local:BaseEntry
+                x:Name="EntryPassword"
+                Style="{DynamicResource EntryStyle}" 
+                Placeholder="Senha" 
+                IsPassword="True" 
+                Text="{Binding Password}"
+                ReturnType="Go"/>
+            
+						<Button Text="ENTRAR" TextColor="#FFF" BorderRadius="0" BorderColor="#FFF" BackgroundColor="#54b3f9" HorizontalOptions="FillAndExpand" Command="{Binding LoginCommand}" />
+						<StackLayout Padding="0,20">
+							<Label Text="Esqueci minha senha" TextColor="#327eb7" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center">
+								<Label.GestureRecognizers>
+									<TapGestureRecognizer Tapped="ForgotPassword" />
+								</Label.GestureRecognizers>
+							</Label>
+						</StackLayout>
+					</StackLayout>
+					<Button Grid.Row="2" Grid.Column="0" Style="{DynamicResource ButtonSignInStyle}" Text="REGISTRAR" Command="{Binding NavigateToSignIn}">
+					</Button>
+				</Grid>
+			</ScrollView>
+			<local:LoadingTemplate AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" IsVisible="{Binding IsLoading}" />
+		</AbsoluteLayout>
+	</ContentPage.Content>
+</ContentPage>

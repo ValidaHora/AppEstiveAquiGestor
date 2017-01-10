@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="EstiveAqui.Pages.ReportsPage" xmlns:local="clr-namespace:EstiveAqui.Pages;assembly=EstiveAqui" xmlns:loading="clr-namespace:EstiveAqui;assembly=EstiveAqui" Style="{DynamicResource AppStyle}" Title="Relatórios">
+	<ContentPage.Content>
+		<AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+			<Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="Background.png" Style="{DynamicResource BackgroundAppStyle}" />
+			<ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+				<StackLayout>
+					<StackLayout.Padding>
+						<OnPlatform x:TypeArguments="Thickness" Android="10,10,10,10" WinPhone="10,10,10,10" iOS="10,10,10,10" />
+					</StackLayout.Padding>
+					<ListView ItemsSource="{Binding Items}" x:Name="Lista" SeparatorVisibility="None" BackgroundColor="Transparent" SeparatorColor="#DFDFDF" HasUnevenRows="false" RowHeight="85" IsVisible="{Binding IsShowReports}">
+						<ListView.ItemTemplate>
+							<DataTemplate>
+								<ViewCell>
+									<local:ReportsPageTemplate />
+								</ViewCell>
+							</DataTemplate>
+						</ListView.ItemTemplate>
+					</ListView>
+					<Label VerticalOptions="CenterAndExpand" HorizontalOptions="Center" IsVisible="{Binding IsShowMsgError}" FontSize="18" FontAttributes="Bold" Text="Não há relatórios disponíveis" TextColor="#09395d" />
+				</StackLayout>
+			</ScrollView>
+			<loading:LoadingTemplate AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" IsVisible="{Binding IsLoading}" />
+		</AbsoluteLayout>
+	</ContentPage.Content>
+</ContentPage>

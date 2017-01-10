@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstiveAqui.Pages.ListReleasedHourPage"
+             xmlns:local="clr-namespace:EstiveAqui.Pages;assembly=EstiveAqui"
+             xmlns:loading="clr-namespace:EstiveAqui;assembly=EstiveAqui"
+             Style="{DynamicResource AppStyle}"
+             Title="Lista de horas lançadas">
+  
+  <ContentPage.Content>
+    <AbsoluteLayout VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand">
+
+      <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+          Source="Background.png"
+          Style="{DynamicResource BackgroundAppStyle}"/>
+        
+        <Picker Title="Período" x:Name="filterPeriodo" IsVisible="False">
+          <Picker.Items>
+            <x:String>TODOS</x:String>
+            <x:String>HOJE</x:String>
+            <x:String>ONTEM</x:String>
+            <x:String>ESTA SEMANA</x:String>
+            <x:String>SEMANA PASSADA </x:String>
+            <x:String>ESTE MÊS</x:String>
+            <x:String>MÊS PASSADO</x:String>
+          </Picker.Items>
+        </Picker>
+        <Picker Title="Username"  x:Name="filterUser" IsVisible="False" />
+        <Picker Title="PasclockAlias" x:Name="filterPassclock" IsVisible="False" />
+
+        <Grid AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional" AbsoluteLayout.LayoutBounds="0,0,1,90"
+              HorizontalOptions="FillAndExpand" 
+              VerticalOptions="Start">
+        <Image Grid.Row="0" Grid.Column="0"
+              Source="BtnCalendar.png"
+              Aspect="AspectFit"
+              Scale="1"
+              Opacity="1"
+              WidthRequest="70"
+              HeightRequest="70" 
+                >
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Tapped="ShowPickerPeriodo"/>
+            </Image.GestureRecognizers>
+          </Image>
+				
+		<Label Grid.Row="0" Grid.Column="0"
+			x:Name="labelPeriodo"			
+			Text="TODOS"
+			TextColor="#09395d"
+			FontSize="10"			
+			HorizontalOptions="Center" 
+            VerticalOptions="End"/>		
+
+          <Image Grid.Row="0" Grid.Column="1"
+              Source="BtnUsers.png"
+              Aspect="AspectFit"
+              Scale="1"
+              Opacity="1"
+              WidthRequest="70"
+              HeightRequest="70"
+                  >
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Tapped="ShowPickerUsername"/>
+            </Image.GestureRecognizers>
+          </Image>
+
+		 <Label Grid.Row="0" Grid.Column="1"			
+		 	x:Name="labelUser"
+			Text="TODOS"
+			TextColor="#09395d"
+			FontSize="10"			
+			HorizontalOptions="Center" 
+            VerticalOptions="End"/>				
+
+          <Image Grid.Row="0" Grid.Column="2"
+                Source="BtnPassclock.png"
+                Aspect="AspectFit"
+                Scale="1"
+                Opacity="1"
+                WidthRequest="70"
+                HeightRequest="70"
+                    >
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Tapped="ShowPickerPassclock"/>
+            </Image.GestureRecognizers>
+          </Image>
+          <Label Grid.Row="0" Grid.Column="2"
+			x:Name="labelPassclock"
+			Text="TODOS"
+			TextColor="#09395d"
+			FontSize="10"
+			HorizontalOptions="Center" 
+            VerticalOptions="End"/>	
+        </Grid>
+
+          <StackLayout AbsoluteLayout.LayoutFlags="XProportional,WidthProportional,HeightProportional" AbsoluteLayout.LayoutBounds="0,80,1,0.89">
+            <StackLayout.Padding>
+              <OnPlatform x:TypeArguments="Thickness"
+                      Android="10,10,10,10"
+                      WinPhone="10,10,10,10"
+                      iOS="10,10,10,10" />
+            </StackLayout.Padding>
+            <ListView 
+                ItemsSource="{Binding Items}" x:Name="Lista"
+                SeparatorVisibility="None"
+                BackgroundColor="Transparent"
+                SeparatorColor="Transparent"
+                HasUnevenRows="false"
+                RowHeight="85">
+             
+              <ListView.ItemTemplate>
+                <DataTemplate>
+                  <ViewCell>
+                    <local:ListReleasedHourPageTemplate  />
+                  </ViewCell>
+                </DataTemplate>
+              </ListView.ItemTemplate>
+            </ListView>
+          </StackLayout>
+	  
+      <Image
+        AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.83,0.95, 70, 70"
+        Source="BtnAdd.png"
+        Aspect="AspectFill"
+        Scale="1"
+        Opacity="1"
+        >
+        <Image.GestureRecognizers>
+          <TapGestureRecognizer Tapped="ShowAdd"/>
+        </Image.GestureRecognizers>
+      </Image>
+
+      <!--<loading:LoadingTemplate AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"  />-->
+
+    </AbsoluteLayout>
+  </ContentPage.Content>
+</ContentPage>

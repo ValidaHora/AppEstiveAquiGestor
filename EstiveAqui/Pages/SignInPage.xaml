@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="EstiveAqui.Pages.SignInPage" xmlns:local="clr-namespace:EstiveAqui;assembly=EstiveAqui" Style="{DynamicResource AppStyle}">
+	<ContentPage.Content>
+		<AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+			<Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="Background.png" Style="{DynamicResource BackgroundAppStyle}" />
+			<ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+				<Grid>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="280" />
+						<RowDefinition Height="*" />
+					</Grid.RowDefinitions>
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*" />
+					</Grid.ColumnDefinitions>
+					<Image Grid.Row="0" Grid.Column="0" Source="Logo.png" Aspect="AspectFill" Scale="0.7" HorizontalOptions="Center" VerticalOptions="Center" />
+					<StackLayout Grid.Row="1" Grid.Column="0" Padding="20,0" Spacing="7" HorizontalOptions="FillAndExpand" VerticalOptions="End">
+						<local:BaseEntry x:Name="email" Style="{DynamicResource EntryStyle}" Placeholder="Email" Keyboard="Email" ReturnType="Next" />
+						<local:BaseEntry x:Name="senha" Style="{DynamicResource EntryStyle}" Placeholder="Senha" IsPassword="True" ReturnType="Next" />
+						<local:BaseEntry x:Name="confirmarSenha" Style="{DynamicResource EntryStyle}" Placeholder="Confirma Senha" IsPassword="True" ReturnType="Go" />
+						<Button Text="REGISTRAR" TextColor="#FFF" BorderRadius="0" BorderColor="#FFF" Clicked="Registrar" BackgroundColor="#54b3f9" HorizontalOptions="FillAndExpand" />
+						<StackLayout Padding="0,30">
+							<Label Text="Eu já tenho uma conta." TextColor="#327eb7" VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center">
+								<Label.GestureRecognizers>
+									<TapGestureRecognizer Tapped="HaveAccount" />
+								</Label.GestureRecognizers>
+							</Label>
+						</StackLayout>
+					</StackLayout>
+				</Grid>
+			</ScrollView>
+			<!--<local:localTemplate AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"  IsVisible="{Binding Islocal}" />-->
+		</AbsoluteLayout>
+	</ContentPage.Content>
+</ContentPage>

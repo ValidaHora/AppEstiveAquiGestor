@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstiveAqui.App">
+  <Application.Resources>
+    <ResourceDictionary>
+
+      <Color x:Key="AppBackgroundColor">#139DF2</Color>
+      <Color x:Key="EntryBackgroundColor">#30FFFFFF</Color>
+      <Color x:Key="ButtonSignInBackgroundColor">#30FFFFFF</Color>
+      
+			<Color x:Key="CardBackgroundColor">#85ffffff</Color>
+			<Color x:Key="NameColor">#1b4296</Color>
+			<Color x:Key="DepartmentColor">#037bb1</Color>
+			<Color x:Key="LocationColor">#4e4e4e</Color>
+
+
+      <Style x:Key="AppStyle" TargetType="ContentPage">
+        <Setter Property="BackgroundColor" Value="{DynamicResource AppBackgroundColor}"/>
+      </Style>
+
+      <Style x:Key="BackgroundAppStyle" TargetType="Image">
+        <Setter Property="Aspect" Value="AspectFill"/>
+        <Setter Property="Opacity" Value="0.7"/>
+      </Style>
+
+      <Style x:Key="BackgroundAppLightStyle" TargetType="Image">
+        <Setter Property="Aspect" Value="AspectFill"/>
+        <Setter Property="Opacity" Value="0.9"/>
+      </Style>
+
+      <Style x:Key="EntryStyle" TargetType="Entry">
+        <Setter Property="HeightRequest" Value="40"/>
+        <Setter Property="PlaceholderColor" Value="#000" />
+        <Setter Property="TextColor" Value="#000" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource EntryBackgroundColor}"/>
+      </Style>
+
+      <Style x:Key="EditorStyle" TargetType="Editor">
+        <Setter Property="HeightRequest" Value="100"/>
+        <Setter Property="TextColor" Value="#000" />
+        <Setter Property="BackgroundColor" Value="{DynamicResource EntryBackgroundColor}"/>
+      </Style>
+
+      <Style x:Key="DatePickerStyle" TargetType="DatePicker">
+        <Setter Property="HeightRequest" Value="40"/>
+        <Setter Property="BackgroundColor" Value="{DynamicResource EntryBackgroundColor}"/>
+      </Style>
+
+      <Style x:Key="TimePickerStyle" TargetType="TimePicker">
+        <Setter Property="HeightRequest" Value="40"/>
+        <Setter Property="BackgroundColor" Value="{DynamicResource EntryBackgroundColor}"/>
+      </Style>
+
+      <Style x:Key="ButtonSignInStyle" TargetType="Button">
+        <Setter Property="WidthRequest" Value="120"/>
+        <Setter Property="BackgroundColor" Value="Transparent"/>
+        <Setter Property="TextColor" Value="#1079c6"/>
+        <Setter Property="BorderRadius" Value="0"/>
+        <Setter Property="BorderWidth" Value="2"/>
+        <Setter Property="BorderColor" Value="#1079c6"/>
+        <Setter Property="HorizontalOptions" Value="Center"/>
+        <Setter Property="VerticalOptions" Value="Center"/>       
+      </Style>
+      
+      <Style x:Key="ButtonSignOutStyle" BasedOn="{StaticResource ButtonSignInStyle}" TargetType="Button">
+        <Setter Property="TextColor" Value="#870202"/>
+        <Setter Property="BorderColor" Value="#870202"/>
+      </Style>
+      
+      <Style x:Key="CardStyle" TargetType="Grid">
+        <Setter Property="HeightRequest" Value="65"/>
+        <Setter Property="Padding" Value="5,10,0,10"/>
+        <Setter Property="BackgroundColor" Value="{DynamicResource CardBackgroundColor}"/>
+      </Style>
+
+      <Style x:Key="CardConfigStyle" BasedOn="{StaticResource CardStyle}" TargetType="Grid">
+        <Setter Property="HeightRequest" Value="40"/>
+        <Setter Property="Padding" Value="10"/>
+      </Style>
+      
+      <Style x:Key="NameStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="TextColor" Value="{DynamicResource NameColor}"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+      </Style>
+
+      <Style x:Key="DepartmentStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="TextColor" Value="{DynamicResource DepartmentColor}"/>
+      </Style>
+
+      <Style x:Key="LocationStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="TextColor" Value="{DynamicResource LocationColor}"/>
+        <Setter Property="FontAttributes" Value="Bold"/>
+      </Style>
+
+    </ResourceDictionary>
+  </Application.Resources>
+</Application>

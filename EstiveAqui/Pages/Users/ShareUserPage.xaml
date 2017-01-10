@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstiveAqui.Pages.ShareUserPage"
+             Style="{DynamicResource AppStyle}">
+
+  <ContentPage.Content>
+    <AbsoluteLayout VerticalOptions="FillAndExpand"
+                  HorizontalOptions="FillAndExpand">
+
+      <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+          Source="Background.png"
+          Style="{DynamicResource BackgroundAppStyle}"/>
+
+      <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+
+
+          <StackLayout
+               Grid.Row="0" Grid.Column="0"
+               Padding="20,0"
+               Spacing="7"
+               HorizontalOptions="FillAndExpand"
+               VerticalOptions="Center">
+
+            <Label 
+              Text="Deseja compartilhar as informações do usuário {Binding Username}"
+              FontSize="Large"/>
+
+            <Label />
+            <Label />
+            <Label />
+            
+            
+            <Button 
+              Text="SHARE"
+              TextColor="#FFF"
+              BorderRadius="0"
+              BorderColor="#FFF"
+              BackgroundColor="#54b3f9"
+              HorizontalOptions="FillAndExpand"
+              Clicked="Share" />
+
+            
+          </StackLayout>
+
+        </Grid>
+      </ScrollView>
+    </AbsoluteLayout>
+  </ContentPage.Content>
+
+</ContentPage>

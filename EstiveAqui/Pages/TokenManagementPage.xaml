@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstiveAqui.Pages.TokenManagementPage"
+             xmlns:loading="clr-namespace:EstiveAqui;assembly=EstiveAqui"
+             Style="{DynamicResource AppStyle}">
+
+  <ContentPage.Content>
+    <AbsoluteLayout VerticalOptions="FillAndExpand"
+                  HorizontalOptions="FillAndExpand">
+
+      <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+          Source="Background.png"
+          Style="{DynamicResource BackgroundAppStyle}"/>
+
+      <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+        <Grid>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="280" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="70" />
+          </Grid.RowDefinitions>
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+          <Image
+               	Grid.Row="0" Grid.ColumnSpan="2"
+               	Source="Logo.png"
+				Aspect="AspectFill"
+				Scale="0.7"
+				HorizontalOptions="Center"
+				VerticalOptions="Center"/>
+
+            <Image
+              Grid.Row="1" Grid.Column="0"
+              Source="TokenFront.png"
+              HorizontalOptions="End"
+              VerticalOptions="End"
+              Aspect="Fill"/>
+             
+            <Image
+              Grid.Row="1" Grid.Column="1"
+              Source="TokenBack.png"
+              HorizontalOptions="Start"
+              VerticalOptions="End"
+              Aspect="Fill"/>
+
+          <StackLayout
+            Grid.Row="2" Grid.ColumnSpan="2"
+            Padding="20,20"
+            Spacing="20"
+            VerticalOptions="Start">
+            <!--<Label
+               Text="Saiba mais sobre nós"
+               TextColor="#327eb7"
+               VerticalOptions="CenterAndExpand"
+               HorizontalTextAlignment="Center">
+              <Label.GestureRecognizers>
+                <TapGestureRecognizer Tapped="LearnMore"/>
+              </Label.GestureRecognizers>
+            </Label>-->
+            <Button
+                Text="ADICIONAR PASSCLOCK"
+                TextColor="#FFF"
+                BorderRadius="0"
+                BorderColor="#FFF"
+                BackgroundColor="#54b3f9"
+                HorizontalOptions="FillAndExpand"
+                Clicked="AddToken"/>
+          </StackLayout>
+          <Button
+                Grid.Row="3" Grid.ColumnSpan="2"
+                Style="{DynamicResource ButtonSignOutStyle}"
+                Text="Sair"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                Clicked="SignOut">
+          </Button>
+        </Grid> 
+      </ScrollView>
+      <!--<loading:LoadingTemplate AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" IsVisible="{Binding IsLoading}" />-->
+    </AbsoluteLayout>
+  </ContentPage.Content>
+</ContentPage>

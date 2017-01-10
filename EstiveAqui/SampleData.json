@@ -1,0 +1,153 @@
+﻿{
+  "ListUserPageTemplate.xaml": {
+    "Username": "JunaoZN",
+    "IntegrationId": "=AM75896",
+    "MaxLancamentoDia": 6
+  },
+
+  "ListUserPage.xaml": [
+    {
+      "Username": "JunaoZN",
+      "IntegrationId": "27/09/2016 01:47:00 AM",
+      "MaxLancamentoDia": 6
+    },
+    {
+      "Username": "EltonEA",
+      "IntegrationId": "27/09/2016 01:47:00 AM",
+      "MaxLancamentoDia": 6
+    },
+    {
+      "Username": "Staia9",
+      "IntegrationId": "27/09/2016 01:47:00 AM",
+      "MaxLancamentoDia": 6
+    },
+    {
+      "Username": "Mestre David",
+      "IntegrationId": "28/09/2016 01:47:00 AM",
+      "MaxLancamentoDia": 6
+    },
+    {
+      "Username": "Queixada de Bode",
+      "IntegrationId": "28/09/2016 01:47:00 AM",
+      "MaxLancamentoDia": 6
+    },
+    {
+      "Username": "Giggio",
+      "IntegrationId": "28/09/2016 01:47:00 AM",
+      "MaxLancamentoDia": 6
+    },
+    {
+      "Username": "Pepo",
+      "IntegrationId": "28/09/2016 01:47:00 AM",
+      "MaxLancamentoDia": 6
+    },
+    {
+      "Username": "JunaoZN",
+      "IntegrationId": "27/09/2016 01:47:00 AM",
+      "MaxLancamentoDia": 6
+    },
+    {
+      "Username": "EltonEA",
+      "IntegrationId": "27/09/2016 01:47:00 AM",
+      "MaxLancamentoDia": 6
+    }
+  ],
+
+  "ListReleasedHourPageTemplate.xaml": {
+    "ApelidoUsuario": "JunaoZN",
+    "ApelidoPassclock": "27/09/2016 01:47:00 AM",
+    "DataHoraLancada": "Work"
+  },
+
+  "ListReleasedHourPage.xaml": [
+    {
+      "ApelidoUsuario": "JunaoZN",
+      "ApelidoPassclock": "27/09/2016 01:47:00 AM",
+      "DataHoraLancada": "Work"
+    },
+    {
+      "ApelidoUsuario": "EltonEA",
+      "ApelidoPassclock": "27/09/2016 01:47:00 AM",
+      "DataHoraLancada": "Work"
+    },
+    {
+      "ApelidoUsuario": "JunaoZN",
+      "ApelidoPassclock": "27/09/2016 01:47:00 AM",
+      "DataHoraLancada": "Home"
+    },
+    {
+      "ApelidoUsuario": "EltonEA",
+      "ApelidoPassclock": "27/09/2016 01:47:00 AM",
+      "DataHoraLancada": "Home"
+    },
+    {
+      "ApelidoUsuario": "JunaoZN",
+      "ApelidoPassclock": "28/09/2016 01:47:00 AM",
+      "DataHoraLancada": "Work"
+    },
+    {
+      "ApelidoUsuario": "EltonEA",
+      "ApelidoPassclock": "28/09/2016 01:47:00 AM",
+      "DataHoraLancada": "Work"
+    },
+    {
+      "ApelidoUsuario": "JunaoZN",
+      "ApelidoPassclock": "28/09/2016 01:47:00 AM",
+      "DataHoraLancada": "Home"
+    },
+    {
+      "ApelidoUsuario": "EltonEA",
+      "ApelidoPassclock": "28/09/2016 01:47:00 AM",
+      "DataHoraLancada": "Home"
+    }
+  ],
+	"ReportsPageTemplate.xaml": {
+    	"NomeArquivo": "Relatório XYZ",
+		"Mes": "201610",
+    	"Url": "http://relatorio.des.validahora.com.br"
+  },
+
+  "ReportsPage.xaml": [
+    {
+      	"NomeArquivo": "Relatório XYZ",
+		"Mes": "201610",
+    	"Url": "http://relatorio.des.validahora.com.br"
+    },
+    {
+      	"NomeArquivo": "Relatório TESTE",
+		"Mes": "201610",
+    	"Url": "http://relatorio.des.validahora.com.br"
+    },
+	{
+      	"NomeArquivo": "Relatório XYZ",
+		"Mes": "201609",
+    	"Url": "http://relatorio.des.validahora.com.br"
+    },
+    {
+      	"NomeArquivo": "Relatório TESTE",
+		"Mes": "201609",
+    	"Url": "http://relatorio.des.validahora.com.br"
+    },
+		{
+      	"NomeArquivo": "Relatório XYZ",
+		"Mes": "201608",
+    	"Url": "http://relatorio.des.validahora.com.br"
+    },
+    {
+      	"NomeArquivo": "Relatório TESTE",
+		"Mes": "201608",
+    	"Url": "http://relatorio.des.validahora.com.br"
+    },
+	{
+      	"NomeArquivo": "Relatório XYZ",
+		"Mes": "201607",
+    	"Url": "http://relatorio.des.validahora.com.br"
+    },
+    {
+      	"NomeArquivo": "Relatório TESTE",
+		"Mes": "201607",
+    	"Url": "http://relatorio.des.validahora.com.br"
+    }
+  ]
+
+}

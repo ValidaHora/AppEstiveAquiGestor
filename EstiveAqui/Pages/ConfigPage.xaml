@@ -1,0 +1,60 @@
+﻿<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EstiveAqui.Pages.ConfigPage"
+             xmlns:loading="clr-namespace:EstiveAqui;assembly=EstiveAqui"
+             Style="{DynamicResource AppStyle}"
+             Title="Configuração do Usuário">
+
+  <ContentPage.Content>
+    <AbsoluteLayout
+        VerticalOptions="FillAndExpand"
+        HorizontalOptions="FillAndExpand">
+
+      <Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+          Source="Background.png"
+          Style="{DynamicResource BackgroundAppStyle}"/>
+
+      <ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+        <StackLayout>
+          <StackLayout.Padding>
+            <OnPlatform x:TypeArguments="Thickness"
+                    Android="10,10,10,10"
+                    WinPhone="10,10,10,10"
+                    iOS="10,10,10,10" />
+          </StackLayout.Padding>
+          <ListView ItemsSource="{Binding Items}" x:Name="Lista"
+						  SeparatorVisibility="None"
+						  BackgroundColor="Transparent"
+						  SeparatorColor="#DFDFDF"
+						  HasUnevenRows="false"
+						  RowHeight="55">
+            <ListView.ItemTemplate>
+              <DataTemplate>
+                <ViewCell>
+                  <StackLayout Spacing="0" Padding="0">
+                    <Grid Style="{DynamicResource CardConfigStyle}">
+                      <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                      </Grid.ColumnDefinitions>
+
+                      <StackLayout Grid.Column="0" Spacing="0" Padding="10,5">
+                        <Label Text="{Binding .}" Style="{DynamicResource NameStyle}"/>
+                      </StackLayout>
+
+                    </Grid>
+
+                    <BoxView
+                    BackgroundColor="#139DF2"
+                    HeightRequest="1.5"/>
+                  </StackLayout>
+                </ViewCell>
+              </DataTemplate>
+            </ListView.ItemTemplate>
+          </ListView>
+        </StackLayout>
+      </ScrollView>
+      <!--<loading:LoadingTemplate AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" IsVisible="{Binding IsLoading}"  />-->
+
+    </AbsoluteLayout>
+  </ContentPage.Content>
+</ContentPage>

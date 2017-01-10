@@ -1,0 +1,78 @@
+<ContentView
+  xmlns="http://xamarin.com/schemas/2014/forms"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+  x:Class="EstiveAqui.Pages.ListUserPageTemplate">
+  <ContentView.Content>
+
+    <StackLayout Spacing="0" Padding="0">
+      <Grid Style="{DynamicResource CardStyle}">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackLayout Grid.Column="0" Spacing="0" Padding="10,5">
+          <Label Text="{Binding Username}" Style="{DynamicResource NameStyle}"/>
+          <Label Text="{Binding IntegrationId}" Style="{DynamicResource DepartmentStyle}"/>
+        </StackLayout>
+        <StackLayout Grid.Column="0" Spacing="7" Padding="10,0" VerticalOptions="End">
+          <StackLayout Orientation="Horizontal">
+            <Label Text="Máx. Laçamento por Dia" Style="{DynamicResource LocationStyle}" />
+            <Label Text="{Binding MaxLancamentoDia}" Style="{DynamicResource LocationStyle}" HorizontalOptions="FillAndExpand"/>
+          </StackLayout>
+        </StackLayout>
+        <StackLayout Grid.Column="0" Spacing="4" Padding="10,10"
+          Orientation="Horizontal"
+          HorizontalOptions="End"
+          VerticalOptions="End">
+
+          <Image
+             Source="BtnShare.png"
+             x:Name="btnShare"
+             Aspect="AspectFill"
+             Scale="0.6"
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             IsVisible="{Binding ActiveToggle}">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Tapped="Share" BindingContext="{Binding .}"/>
+            </Image.GestureRecognizers>
+          </Image>
+
+          <Image
+             Source="BtnDisable.png"
+             x:Name="btnDisable"
+             Aspect="AspectFill"
+             Scale="0.6"
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             IsVisible="{Binding Active}">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Tapped="Disable" BindingContext="{Binding .}"/>
+            </Image.GestureRecognizers>
+          </Image>
+
+          <!--<Button Text=" Compartilhar " 
+                  TextColor="#FFF"
+                  Clicked="Share"
+                  x:Name="btnEnable"
+                  BackgroundColor="#139DF2"
+                  CommandParameter="{Binding .}"
+                  IsVisible="{Binding ActiveToggle}"/>-->
+          
+          <!--<Button Text=" Desativar "
+                  TextColor="#FFF"
+                  Clicked="Disable"
+                  x:Name="btnDisable"
+                  BackgroundColor="#139DF2"
+                  CommandParameter="{Binding .}"
+                  IsVisible="{Binding Active}"/>-->
+        </StackLayout>
+
+      </Grid>
+
+      <BoxView BackgroundColor="#139DF2"
+               HeightRequest="1.5"/>
+    </StackLayout>
+
+  </ContentView.Content>
+</ContentView>

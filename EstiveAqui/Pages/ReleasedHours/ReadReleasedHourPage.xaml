@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps" x:Class="EstiveAqui.Pages.ReadReleasedHourPage" Style="{DynamicResource AppStyle}" Title="Detalhes do lançamento">
+	<TabbedPage.Children>
+		<ContentPage Title="Detalhes" Icon="Time.png">
+			<AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+				<Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="Background.png" Style="{DynamicResource BackgroundAppLightStyle}" />
+				<ScrollView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1">
+					<StackLayout Padding="20,20" Spacing="8" HorizontalOptions="FillAndExpand" VerticalOptions="Center">
+						<Label Text="{Binding ApelidoUsuario}" FontSize="26" FontAttributes="Bold" TextColor="#09395d" />
+						<Grid Padding="0,20,0,6">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="1" />
+							</Grid.RowDefinitions>
+							<Label Grid.Row="0" FontSize="18" FontAttributes="Bold" Text="PASSCLOCK" TextColor="#09395d" />
+							<BoxView Grid.Row="1" BackgroundColor="#09395d" />
+						</Grid>
+						<StackLayout Orientation="Horizontal">
+							<Label FontSize="16" FontAttributes="Bold" Text="Apelido:" TextColor="#0c4394" />
+							<Label FontSize="16" Text="{Binding ApelidoPassclock}" TextColor="#0c4394" HorizontalOptions="FillAndExpand" />
+						</StackLayout>
+						<StackLayout Orientation="Horizontal">
+							<Label FontSize="16" FontAttributes="Bold" Text="Identificação:" TextColor="#0c4394" />
+							<Label FontSize="16" Text="{Binding IdPassclock}" TextColor="#0c4394" HorizontalOptions="FillAndExpand" />
+						</StackLayout>
+						<StackLayout Orientation="Horizontal">
+							<Label FontSize="16" FontAttributes="Bold" Text="Número:" TextColor="#0c4394" />
+							<Label FontSize="16" Text="{Binding NumeroPassclock}" TextColor="#0c4394" HorizontalOptions="FillAndExpand" />
+						</StackLayout>
+						<Grid Padding="0,20,0,6">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="1" />
+							</Grid.RowDefinitions>
+							<Label Grid.Row="0" FontSize="18" FontAttributes="Bold" Text="LANÇAMENTOS" TextColor="#09395d" />
+							<BoxView Grid.Row="1" BackgroundColor="#09395d" />
+						</Grid>
+						<StackLayout Orientation="Horizontal">
+							<Label FontSize="16" FontAttributes="Bold" Text="Lançada:" TextColor="#0c4394" />
+							<Label FontSize="16" Text="{Binding DataHoraLancada, StringFormat='{}{0:dd/MM/yyyy HH:mm:ss}'}" TextColor="#0c4394" HorizontalOptions="FillAndExpand" />
+						</StackLayout>
+						<StackLayout Orientation="Horizontal">
+							<Label FontSize="16" FontAttributes="Bold" Text="Digitada:" TextColor="#0c4394" />
+							<Label FontSize="16" Text="{Binding DataHoraDigitada, StringFormat='{}{0:dd/MM/yyyy HH:mm:ss}'}" TextColor="#0c4394" HorizontalOptions="FillAndExpand" />
+						</StackLayout>
+						<StackLayout Orientation="Horizontal">
+							<Label FontSize="16" FontAttributes="Bold" Text="Enviada:" TextColor="#0c4394" />
+							<Label FontSize="16" Text="{Binding DataHoraEnviada, StringFormat='{}{0:dd/MM/yyyy HH:mm:ss}'}" TextColor="#0c4394" HorizontalOptions="FillAndExpand" />
+						</StackLayout>
+						<Grid Padding="0,20,0,6">
+							<Grid.RowDefinitions>
+								<RowDefinition Height="Auto" />
+								<RowDefinition Height="1" />
+							</Grid.RowDefinitions>
+							<Label Grid.Row="0" FontSize="18" FontAttributes="Bold" Text="NOTAS" TextColor="#09395d" />
+							<BoxView Grid.Row="1" BackgroundColor="#09395d" />
+						</Grid>
+						<Label FontSize="16" Text="{Binding Nota}" LineBreakMode="WordWrap" TextColor="#0c4394" />
+					</StackLayout>
+				</ScrollView>
+			</AbsoluteLayout>
+		</ContentPage>
+		<ContentPage Title="Mapa" Icon="Earth.png">
+			<AbsoluteLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+				<Image AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" Source="Background.png" Style="{DynamicResource BackgroundAppLightStyle}" />
+				<StackLayout AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+					<Label VerticalOptions="CenterAndExpand" HorizontalOptions="Center" IsVisible="{Binding IsShowMsgError}" FontSize="18" FontAttributes="Bold" Text="{Binding MsgError}" TextColor="#09395d" />
+					<maps:Map x:Name="MainMap" IsVisible="{Binding IsShowMap}" IsShowingUser="true" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+				</StackLayout>
+			</AbsoluteLayout>
+		</ContentPage>
+	</TabbedPage.Children>
+</TabbedPage>

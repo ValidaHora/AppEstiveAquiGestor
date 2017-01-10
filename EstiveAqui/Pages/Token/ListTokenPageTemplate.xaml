@@ -1,0 +1,62 @@
+<ContentView 
+  xmlns="http://xamarin.com/schemas/2014/forms" 
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+  x:Class="EstiveAqui.Pages.ListTokenPageTemplate">
+  <ContentView.Content>
+
+    <StackLayout Spacing="0" Padding="0">
+      <Grid Style="{DynamicResource CardStyle}">
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <StackLayout Grid.Column="0" Spacing="0" Padding="10,5">
+          <Label Text="{Binding Alias}" Style="{DynamicResource NameStyle}"/>
+          <Label Text="{Binding Value}" Style="{DynamicResource DepartmentStyle}"/>
+        </StackLayout>
+        <StackLayout Grid.Column="0" Spacing="0" Padding="10,0" VerticalOptions="End">
+          <Label Text="{Binding BarCode}"
+                 Style="{DynamicResource LocationStyle}"/>
+        </StackLayout>        
+        <StackLayout Grid.Column="0" Spacing="4" Padding="10,10"
+          Orientation="Horizontal"
+          HorizontalOptions="End"
+          VerticalOptions="End">
+
+          <Image
+             Source="BtnEnable.png"
+             x:Name="btnEnable"
+             Aspect="AspectFill"
+             Scale="0.6"
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             IsVisible="{Binding Active}">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Tapped="Disable" BindingContext="{Binding .}"/>
+            </Image.GestureRecognizers>
+          </Image>
+
+          <Image
+             Source="BtnDisable.png"
+             x:Name="btnDisable"
+             Aspect="AspectFill"
+             Scale="0.6"
+             HorizontalOptions="Center"
+             VerticalOptions="Center"
+             IsVisible="{Binding ActiveToggle}">
+            <Image.GestureRecognizers>
+              <TapGestureRecognizer Tapped="Enable" BindingContext="{Binding .}"/>
+            </Image.GestureRecognizers>
+          </Image>                    
+
+        </StackLayout>
+      </Grid>
+
+        <BoxView
+        BackgroundColor="#139DF2"
+        HeightRequest="1.5"/>
+    </StackLayout>
+
+  </ContentView.Content>
+</ContentView>

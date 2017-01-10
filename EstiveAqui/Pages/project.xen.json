@@ -1,0 +1,9 @@
+{
+  "schema": "https://schemas.xenforms.com/xenproject/v1/",
+  "assemblies": null,
+  "views": [
+    {
+      "typeName": "EstiveAqui.Pages"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+﻿<ContentView 
+  xmlns="http://xamarin.com/schemas/2014/forms" 
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+  x:Class="EstiveAqui.LoadingTemplate">
+  <ContentView.Content>
+    <AbsoluteLayout 
+      VerticalOptions="FillAndExpand"
+      HorizontalOptions="FillAndExpand">
+
+      <ContentView AbsoluteLayout.LayoutFlags="All" AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                   BackgroundColor="#54b3f9" 
+                   Opacity="0.6" />
+      <StackLayout AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0.5,0.5,-1,-1">
+        <ActivityIndicator
+          VerticalOptions="FillAndExpand" 
+          HorizontalOptions="FillAndExpand"
+          Color="#265d87"
+          IsRunning="true"/>
+        <Label
+          Text="carregando ..."
+          TextColor="#265d87"/>
+      </StackLayout>
+
+    </AbsoluteLayout>
+  </ContentView.Content>
+</ContentView>

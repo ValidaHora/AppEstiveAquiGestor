@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="EstiveAqui.Pages.ReportsPageTemplate">
+	<ContentView.Content>
+		<StackLayout Spacing="0" Padding="0">
+			<Grid Style="{DynamicResource CardStyle}">
+				<Grid.ColumnDefinitions>
+					<ColumnDefinition Width="*" />
+					<ColumnDefinition Width="70" />
+					<ColumnDefinition Width="70" />
+					<ColumnDefinition Width="70" />
+				</Grid.ColumnDefinitions>
+				<Label Grid.Column="0" Text="{Binding MesAno}" Style="{DynamicResource NameStyle}" VerticalOptions="Center" />
+				<Image Grid.Column="1" Source="ReportJson.png" Aspect="AspectFit" WidthRequest="60" HeightRequest="60" HorizontalOptions="Center">
+					<Image.GestureRecognizers>
+						<TapGestureRecognizer Tapped="ShareJson" />
+					</Image.GestureRecognizers>
+				</Image>
+				<Image Grid.Column="2" Source="ReportCsv.png" WidthRequest="60" HeightRequest="60" HorizontalOptions="Center">
+					<Image.GestureRecognizers>
+						<TapGestureRecognizer Tapped="ShareCsv" />
+					</Image.GestureRecognizers>
+				</Image>
+				<Image Grid.Column="3" Source="ReportXls.png" WidthRequest="60" HeightRequest="60" HorizontalOptions="Center">
+					<Image.GestureRecognizers>
+						<TapGestureRecognizer Tapped="ShareXls" />
+					</Image.GestureRecognizers>
+				</Image>
+			</Grid>
+			<BoxView BackgroundColor="#139DF2" HeightRequest="0.8" />
+		</StackLayout>
+	</ContentView.Content>
+</ContentView>
